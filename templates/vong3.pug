@@ -1,0 +1,137 @@
+doctype html
+html
+    head
+        meta(charset='utf-8')
+        meta(name='viewport', content='width=device-width, initial-scale=1')
+        title Tăng Tốc
+        link(href="/static/img/favicon.ico" rel="shortcut icon" type="image/x-icon")
+        link(rel='stylesheet', href='/static/vong3_file/font-awesome.min.css', type='text/css')
+        link(rel='stylesheet', href='/static/vong3_file/theme.css', type='text/css')
+        link(rel='stylesheet', href='/static/vong3_file/button.css', type='text/css')
+        link(rel='stylesheet', href='/static/vong3_file/css/reset.min.css')
+        link(rel='stylesheet', href='/static/vong3_file/css/style.css')
+        link(rel='stylesheet', href='/static/vong3_file/css/player.css')
+        style.
+            .custom-backgr {
+            background-position: center;
+            background-size: cover;
+            background-repeat: repeat;
+            }
+            .sans {
+            font-family: sans-serif;
+            font-size: 24px;
+            background: none;
+            border: 2px solid rgba(255,255,255,0.9);
+            }
+            .sans:not([disabled]):hover {
+            background-color: rgba(255,255,255,0.9)
+            }
+            .sans[disabled] {
+            opacity: 0.4;
+            }
+            .sans:focus {
+            outline: none;
+            color: #fff
+            }
+            .hide {
+            display: none;
+            }
+            .hide-vis {
+            visibility: hidden;
+            }
+            .answer:before {
+            content: "Answer: \"";
+            }
+            .answer:after {
+            content: "\"";
+            }
+            
+    body
+        if user.is_admin
+            .ready-div.container.text-center.h-100
+                div(style="height: 40%")
+                h2.mb-4 Vòng 3 - Tăng Tốc
+                .row
+                    .col-md-4
+                    .col-md-4: button.start-btn.btn.btn-info.rounded-0.w-100 Bắt Đầu
+                    .col-md-4
+    
+    
+        .contest-div.text-center.text-white.h-100.d-flex.align-items-center.flex-column.custom-backgr(class={
+            hide: user.is_admin
+        })
+            .container
+                .d-flex.justify-content-center
+                    p.question.h2.my-4.pb-2.border-bottom(style='width: fit-content')
+                
+                video#vid(width='700', autoplay=true)
+                    source(src='', type='video/mp4')
+                
+                #time-bar.progress.mt-2
+                    .progress-bar(role='progressbar')
+            
+                if !user.is_admin
+                    // ONLY USER
+                    form.mb-3(onsubmit='return false;')
+                        legend#submission.pt-1.d-flex.d-flex.flex-row
+                            p.answer #{sub[0]}
+                            p.time(default-value='-:-')= sub[1] >= 0 ? sub[1]/1000 : '-:-'
+                        .control
+                            input#answer(type='text', autocomplete='off', placeholder='NỘI DUNG CÂU TRẢ LỜI')
+                            label Câu Trả Lời
+                        button#commit.btn.rounded-0.w-25.my-1(type='submit') Trả Lời
+                    // ONLY USER
+                    
+            .container.row
+                each u in users
+                    if !u.is_admin
+                        .col-md-3
+                            .card.bg-dark.text-center.text-light
+                                .user.card-body(id=u.id, class={
+                                    me: u.id == user.id
+                                })
+                                    h3.name #{u.name}
+                                    b.score.h2 #{u.score}
+                                
+                .container
+                    h2: br
+                                
+                    if user.is_admin
+                        // ONLY ADMIN
+                        #submissions.hide-vis.d-flex.flex-column.align-items-center.mb-2
+                            - var ind = 1
+                            each sub, id in subs
+                                .submission.alert.alert-light.text-dark.rounded-0.w-75.row.mb-1(to=id, role='alert')
+                                    .name.col-md-3 #{users[ind].name}
+                                    .sub.col-md-9.d-flex.justify-content-between
+                                        span.answer= sub[0]
+                                        span.time(default-value='-:-')= sub[1] >= 0 ? sub[1]/1000 : '-:-'
+
+                                - ind++
+                        
+                        .row.mb-2
+                            .col-md-4: button.next-question.btn.sans.rounded-0.w-100.h-100 Câu Hỏi Tiếp Theo
+                            .col-md-4: button.show-subs.btn.sans.rounded-0.w-100.h-100 Hiện Câu Trả Lời
+                            .col-md-4: button.end-btn.btn.sans.rounded-0.w-100.h-100(disabled) Kết Thúc
+                        // ONLY ADMIN
+                
+
+        if user.is_admin
+            .end-div.hide.container.text-center.h-100
+                div(style="height: 40%")
+                h2.mb-4 Vòng 3 Đã Kết Thúc
+                .row
+                    .col-md-4
+                    .col-md-4: button.next-round.btn.btn-info.rounded-0.w-100 Vòng Tiếp Theo
+                    .col-md-4
+                
+                
+        script(src='/static/vong3_file/jquery-3.2.1.slim.min.js')
+        script(src='/static/vong3_file/popper.min.js')
+        script(src='/static/vong3_file/bootstrap.min.js')
+        script(src='/static/js/timer.js')
+        
+        script(src='/socket.io/socket.io.js')
+        script(src='/static/vong3/vong3-ui.js')
+        if user.is_admin
+            script(src='/static/vong3/vong3-ad.js')

@@ -1,0 +1,73 @@
+doctype html5
+html
+  head
+    meta(charset='utf-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1')
+    link(href='/static/img/favicon.ico' rel='shortcut icon' type='image/x-icon')
+    link(href='/static/css/theme.css' rel='stylesheet')
+    link(href='/static/css/vong4.css' rel='stylesheet')
+    link(href='/static/css/tooltip.css')
+    
+  body
+    .wrapper
+      .question-info(class={
+        'empty-pack': pack == -1,
+        'empty-point': !to_add
+      })
+        .pack= pack > 0 ? pack * 20 + 40 : ''
+        .point #{to_add}
+      .question-container
+        .question #{question}
+      img.star-img(src='/static/img/star.gif')
+
+      .users
+        each u in users
+          if !u.is_admin
+            .user(id=u.id, class={
+              me: u.id == user.id,
+              active: u.id == active
+            })
+              .name #{u.name}
+              .score #{u.score}
+      
+      if user.is_admin
+        .selections
+          .input-group.score-change
+            select.choice.user-select(style='width: 30%', data-tippy-content='Shift - 1/2/3/4')
+              each u in users
+                if !u.is_admin
+                  option(value=u.id) #{u.name}
+            input.input.score-input(type='number', step=5, data-tippy-content='Key A')
+            button.submit.update-score(data-tippy-content='Key Enter') Cập Nhật Điểm
+
+          .input-group.choose-pack(class={
+              hide: pack != -1
+            })
+            select.choice.question-select(style='width: 70%', data-tippy-content='Shift - 5/6/7')
+              option(value=0) Gói câu hỏi 40 điểm
+              option(value=1) Gói câu hỏi 60 điểm
+              option(value=2) Gói câu hỏi 80 điểm
+            button.submit.choose-question(data-tippy-content='Shift - Z') Chọn Gói
+
+        .btn-group
+          button.btn.next(data-tippy-content='Key Space') Tiếp Theo
+          button.btn.star(data-tippy-content='Shift - S') Ngôi Sao Hi Vọng
+          button.btn.catch(data-tippy-content='Key S') 5s Giành Trả Lời
+          button.btn.end(data-tippy-content='Shift - Q') Kết Thúc
+      else
+        .btn-group
+          button.btn.raise-hand(data-tippy-content='Key Space') Giành Quyền Trả Lời
+        
+    script(src='/socket.io/socket.io.js')
+    script(src='/static/js/jquery.slim.min.js')
+    
+    script(src='/static/js/vong4.js')
+    script(src='/static/js/tippy.min.js')
+    script(src='/static/js/sound.js')
+    script.
+      preloadSound([5,10,15,20])
+    if user.is_admin
+      script(src='/static/js/admin/vong4.js')
+    else
+      script.
+        tippy('.btn');

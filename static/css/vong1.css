@@ -1,0 +1,27 @@
+.question-container {
+  height: 40%;
+}
+
+.question.timing::before {
+  transition-duration: 60s;
+}
+
+.users {
+  height: 28%;
+}
+
+.btn-group {
+  height: 45%;
+}
+
+.btn {
+  width: 23%;
+}
+
+.btn.true:not([disabled]):hover {
+  background-color: #52ab4b;
+}
+
+.btn.false:not([disabled]):hover {
+  background-color: #d64a4a;
+}

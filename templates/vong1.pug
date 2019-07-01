@@ -1,0 +1,52 @@
+doctype html5
+html
+  head
+    meta(charset='utf-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1')
+    title Khởi Động
+    
+    link(href='/static/img/favicon.ico' rel='shortcut icon' type='image/x-icon')
+    link(href='/static/css/theme.css' rel='stylesheet')
+    link(href='/static/css/vong1.css' rel='stylesheet')
+    if user.is_admin
+      link(href='/static/css/tooltip.css' rel='stylesheet')
+
+  body
+    .wrapper
+      .question-container
+        .question #{question}
+
+      .users
+        each u in users
+          if !u.is_admin
+            .user(id=u.id, class={
+              active: u.id == active,
+              me: u.id == user.id
+            })
+              .name #{u.name}
+              .score #{u.score}
+
+      if user.is_admin
+        .controllers
+          .btn-group
+            button.btn.start(data-tippy-content="Key Space") Chơi
+            button.btn.true(data-tippy-content="Key A") Đúng
+            button.btn.false(data-tippy-content="Key D") Sai
+            button.btn.next(data-tippy-content="Shift - A") Tiếp Theo
+          .btn-group
+            button.btn.end(data-tippy-content="Shift - D") Kết Thúc
+
+    script(src='/static/js/jquery.slim.min.js')
+    script(src='/socket.io/socket.io.js')
+
+    script(src='/static/js/vong1.js')
+    script(src='/static/js/sound.js')
+    script.
+      preloadSound([60]);
+    if user.is_admin
+      script(src='/static/js/tippy.min.js')
+      script(src='/static/js/admin/vong1.js')
+      script.
+        tippy('.btn', {
+          arrow: true
+        });

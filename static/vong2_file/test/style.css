@@ -1,0 +1,169 @@
+.color-gray {
+    background: rgba(0,0,0,0.75);
+}
+.custom-backgr {
+    background-color: rgba(0, 0, 0, 0.75);
+    background-size: cover;
+    height: 100vh;
+}
+
+.controller {
+    transition: height 5s ease;
+    /*overflow: hidden;*/
+}
+
+.controller.hide {
+    height: 0px;
+}
+
+.controller.show {
+    height: fit-content;
+}
+
+.ctrl-btn {
+    width: 100%;
+    height: 100%;
+    background: none;
+    border: 2px solid #fff;
+    border-radius: 0px;
+    color: #fff;
+    transition: all 0.7s ease;
+    font-size: 17px;
+}
+
+.ctrl-btn:not([disabled]):hover {
+    background-color: rgba(255,255,255,0.9);
+    color: #000;
+}
+
+.ctrl-btn:disabled {
+    opacity: 0.1;
+}
+
+button:focus {
+    outline: none !important;
+}
+
+/*button:focus:not(:hover) {
+    color: #fff;
+}
+*/
+.user.active {
+    background-color: #4d5ca0 !important;
+}
+#ul-id li {
+    color: cornflowerblue;
+}
+#ul-id li:hover {
+    background: #03A9F4!important;
+    color: white;
+}
+[role~=listbox] {
+    color: #2196F3;
+}
+[role~=listbox] li:hover {
+      background: #03A9F4!important;
+    color: white;
+}
+[role~=option] li:hover {
+     background: #03A9F4!important;
+    color: white;
+}
+
+/*start star 5*/
+.five-star{
+    margin: 0 auto;
+    display: block;
+    width: 0;
+    height:0;
+    border-left: solid 100px transparent;
+    border-right: solid 100px transparent;
+    border-bottom: solid 70px yellow;
+    transform: rotatez(35deg);  
+}
+.five-star:before{
+    display: inline-block;
+    position: absolute;
+    display:block;
+    width: 0;
+    height:0;
+    top: -45px;
+  left: -65px;
+    border-left: solid 30px transparent;
+    border-right: solid 30px transparent;
+    border-bottom: solid 80px yellow;
+    transform: rotatez(-35deg);
+    content:'';
+}
+.five-star:after{
+    display: inline-block;
+    position:absolute;
+    display:block;
+    width: 0;
+    height:0;
+    top:3px;
+    left:-105px;
+    border-left: solid 100px transparent;
+    border-right: solid 100px transparent;
+    border-bottom: solid 70px yellow;
+    transform: rotatez(-70deg);
+    content:'';
+}
+/*end 5 start*/
+.star-top {
+    display: block;
+    margin: 0 auto;
+    width: 85%;
+}
+.toggle-star {
+   visibility: hidden;
+}
+.hidden {
+    visibility: hidden;
+}
+.appear {
+    visibility: unset;
+}
+.hope-star {
+    margin-top: 8%;
+}
+.toggle-star-display {
+       animation: move;
+}
+@keyframes move {
+    0% {
+        transform: scale(0.2);  opacity: 0.1;
+    }
+
+/*    50% {
+        opacity: 0.6;
+    }
+*/
+    100% {
+        transform: scale(1);
+          opacity: 1;
+    }
+}
+#contest .progress {
+    margin-top: 20px;
+}
+#dropdownMenuLink:hover {
+    color: white;
+}
+.dropdown select {
+    width: 100%;
+    height: 40px;
+    color: cornflowerblue!important;
+    font-weight: bold;
+} 
+.adj-score {
+    color: cornflowerblue!important;
+    font-weight: bold
+}
+.edit-score .adj-score{
+    width: 49%;
+    height: 40px;
+}
+.edit-score .play-btn {
+    width: 49%
+}

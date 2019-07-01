@@ -1,0 +1,315 @@
+﻿{
+  "users": {
+    "ad": {
+      "name": "Admin",
+      "password": "e3afed0047b08059d0fada10f400c1e5",
+      "is_admin": true
+    },
+    "p1": {
+      "name": "User 1",
+      "password": "e2d38e18759ea68bace101ab39d62e41",
+      "score": 0
+    },
+    "p2": {
+      "name": "User 2",
+      "password": "1c1eb4329e9b82168baaaa84b065209f",
+      "score": 0
+    },
+    "p3": {
+      "name": "User 3",
+      "password": "3889ede791c6872162ed0ab8ce513cd7",
+      "score": 0
+    },
+    "p4": {
+      "name": "User 4",
+      "password": "4cf68b747a0ac6a7cd9b4c1ca3cb89ac",
+      "score": 0
+    }
+  },
+  "rounds": {
+    "current": "vong1",
+    "index": {
+      "p1": false,
+      "p2": false,
+      "p3": false,
+      "p4": false
+    },
+    "vong1": {
+      "stt": "",
+      "time": {
+        "time": 0,
+        "max": 60
+      },
+      "uid": "p1",
+      "current": -1,
+      "p1": [
+        "p1 QUESTION 1",
+        "p1 QUESTION 2",
+        "p1 QUESTION 3",
+        "p1 QUESTION 4",
+        "p1 QUESTION 5",
+        "p1 QUESTION 6",
+        "p1 QUESTION 7",
+        "p1 QUESTION 8",
+        "p1 QUESTION 9",
+        "p1 QUESTION 10",
+        "p1 QUESTION 11",
+        "p1 QUESTION 12"
+      ],
+      "p2": [
+        "p2 QUESTION 1",
+        "p2 QUESTION 2",
+        "p2 QUESTION 3",
+        "p2 QUESTION 4",
+        "p2 QUESTION 5",
+        "p2 QUESTION 6",
+        "p2 QUESTION 7",
+        "p2 QUESTION 8",
+        "p2 QUESTION 9",
+        "p2 QUESTION 10",
+        "p2 QUESTION 11",
+        "p2 QUESTION 12"
+      ],
+      "p3": [
+        "p3 QUESTION 1",
+        "p3 QUESTION 2",
+        "p3 QUESTION 3",
+        "p3 QUESTION 4",
+        "p3 QUESTION 5",
+        "p3 QUESTION 6",
+        "p3 QUESTION 7",
+        "p3 QUESTION 8",
+        "p3 QUESTION 9",
+        "p3 QUESTION 10",
+        "p3 QUESTION 11",
+        "p3 QUESTION 12"
+      ],
+      "p4": [
+        "p4 QUESTION 1",
+        "p4 QUESTION 2",
+        "p4 QUESTION 3",
+        "p4 QUESTION 4",
+        "p4 QUESTION 5",
+        "p4 QUESTION 6",
+        "p4 QUESTION 7",
+        "p4 QUESTION 8",
+        "p4 QUESTION 9",
+        "p4 QUESTION 10",
+        "p4 QUESTION 11",
+        "p4 QUESTION 12"
+      ]
+    },
+    "vong2": {
+      "stt": "",
+      "time": {
+        "time": 0,
+        "max": 15
+      },
+      "points": [
+        80,
+        80,
+        60,
+        40,
+        20,
+        10
+      ],
+      "key_answered": false,
+      "answered": [],
+      "current": -1,
+      "banned": [],
+      "questions": [
+        {
+          "question": "QUESTION 1",
+          "answ": " ĐÁP ÁN 1"
+        },
+        {
+          "question": "QUESTION 2",
+          "answ": "ĐÁP ÁN 2"
+        },
+        {
+          "question": "QUESTION 3",
+          "answ": "ĐÁP ÁN 3"
+        },
+        {
+          "question": "QUESTION 4",
+          "answ": "ĐÁP ÁN 4"
+        },
+        {
+          "question": "QUESTION 5",
+          "answ": "ĐÁP ÁN 5"
+        }
+      ],
+      "subs": [
+        "",
+        "",
+        "",
+        ""
+      ]
+    },
+    "vong3": {
+      "stt": "",
+      "current": -1,
+      "time": {
+        "time": 0,
+        "max": 30
+      },
+      "subs": {
+        "p1": [
+          "",
+          -1
+        ],
+        "p2": [
+          "",
+          -1
+        ],
+        "p3": [
+          "",
+          -1
+        ],
+        "p4": [
+          "",
+          -1
+        ]
+      },
+      "scores": [
+        40,
+        30,
+        20,
+        10
+      ],
+      "questions": [
+        {
+          "question": "ABC XYZ 1",
+          "answ": [
+            "ANS 1 1",
+            "ANS 1 2"
+          ],
+          "src": "/path1"
+        },
+        {
+          "question": "ABC XYZ 2",
+          "answ": [
+            "ANS 2 1",
+            "ANS 2 "
+          ],
+          "src": "/path2"
+        },
+        {
+          "question": "ABC XYZ 3",
+          "answ": [
+            "ANS 3 1",
+            "ANS 3 2"
+          ],
+          "src": "/path2"
+        },
+        {
+          "question": "ABC XYZ 4",
+          "answ": [
+            "ANS 4 1",
+            "ANS 4 2"
+          ],
+          "src": "/path2"
+        }
+      ]
+    },
+    "vong4": {
+      "uid": "p1",
+      "time": [
+        10,
+        15,
+        20
+      ],
+      "is_playing": false,
+      "pack": -1,
+      "cur": -1,
+      "star": false,
+      "points": [
+        [
+          10,
+          10,
+          20
+        ],
+        [
+          10,
+          20,
+          30
+        ],
+        [
+          20,
+          30,
+          30
+        ]
+      ],
+      "questions": {
+        "p1": [
+          [
+            "40 p1 1",
+            "40 p1 2",
+            "40 p1 3"
+          ],
+          [
+            "60 p1 1",
+            "60 p1 2",
+            "60 p1 3"
+          ],
+          [
+            "80 p1 1",
+            "80 p1 2",
+            "80 p1 3"
+          ]
+        ],
+        "p2": [
+          [
+            "40 p2 1",
+            "40 p2 2",
+            "40 p2 3"
+          ],
+          [
+            "60 p2 1",
+            "60 p2 2",
+            "60 p2 3"
+          ],
+          [
+            "80 p2 1",
+            "80 p2 2",
+            "80 p2 3"
+          ]
+        ],
+        "p3": [
+          [
+            "40 p3 1",
+            "40 p3 2",
+            "40 p3 3"
+          ],
+          [
+            "60 p3 1",
+            "60 p3 2",
+            "60 p3 3"
+          ],
+          [
+            "80 p3 1",
+            "80 p3 2",
+            "80 p3 3"
+          ]
+        ],
+        "p4": [
+          [
+            "40 p4 1",
+            "40 p4 2",
+            "40 p4 3"
+          ],
+          [
+            "60 p4 1",
+            "60 p4 2",
+            "60 p4 3"
+          ],
+          [
+            "80 p4 1",
+            "80 p4 2",
+            "80 p4 3"
+          ]
+        ]
+      }
+    }
+  }
+}

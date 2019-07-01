@@ -1,0 +1,151 @@
+body {
+  background-image: url(/static/img/background.png);
+  background-size: auto 100vh;
+  background-position: center 0px;
+  background-repeat: no-repeat;
+  margin: 0px;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  text-align: justify;
+  
+  font-size: 20px;
+  font-family: helvetica;
+  color: #000;
+}
+
+.wrapper {
+  padding: 30px;
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  position: relative;
+}
+
+.wrapper > * {
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.question-container {
+  background-color: #fff;
+  background-clip: border-box;
+  border: 4px dashed #000;
+  position: relative;
+  overflow: hidden;
+}
+
+.question {
+  box-sizing: border-box;
+  padding: 10px;
+  font-size: 22px;
+  line-height: 30px;
+  word-spacing: .4rem;
+  position: relative;
+  z-index: 1;
+}
+
+.question::before {
+  content: "";
+  color: #fff;
+  background-color: #abb7ef;
+  white-space: nowrap;
+  overflow: hidden;
+  
+  display: block;
+  position: absolute;
+  width: 0;
+  height: 9999px;
+  top: -0px;
+  left: -0px;
+  box-sizing: border-box;
+  transition: width linear;
+  transition-duration: 0s;
+  z-index: -1;
+  visibility: hidden;
+}
+
+.question:not(.timing)::before {
+  width: 0px !important;
+  visibility: hidden !important;
+}
+
+.question.timing::before {
+  width: 100%;
+  visibility: visible;
+}
+
+.users {
+  margin-top: 15px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.user {
+  width: 20%;
+  height: 100%;
+  border: 3px solid #000;
+  background-color: #fff;
+  text-align: center;
+  padding: 10px;
+  box-sizing: border-box;
+  
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.user.me {
+  background-color: #98dcf5;
+}
+
+.user.active {
+  background-color: #6470a9;
+  color: #fff;
+}
+
+.name {
+  font-weight: bold;
+}
+
+.score {
+  font-size: 40px;
+}
+
+.controllers {
+  margin-top: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 25%;
+}
+
+.btn-group {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.btn {
+  background-color: #fff;
+  border: 3px solid #000;
+  font-size: 18px;
+  transition: all .3s ease;
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+.btn:focus{
+  outline: 2.5px solid #80c7ff;
+}
+
+.btn[disabled] {
+  opacity: .2;
+}
+
+.btn:not([disabled]):hover {
+  background-color: #6470a9;
+  color: #fff;
+  cursor: pointer;
+}

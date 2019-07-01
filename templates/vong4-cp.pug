@@ -1,0 +1,202 @@
+doctype html
+html
+    head
+        meta(charset='utf-8')
+        meta(name='viewport', content='width=device-width, initial-scale=1')
+        link(href="/static/img/favicon.ico" rel="shortcut icon" type="image/x-icon")
+        link(rel='stylesheet', href='/static/vong4_file/css/fontawesome.css', type='text/css')
+        link(rel='stylesheet', href='/static/vong4_file/css/bootstrap.css')
+        link(rel='stylesheet', href='/static/vong4_file/css/theme.css')
+        link(rel='stylesheet', href='/static/vong4_file/css/style.css')
+        link(rel='stylesheet', href='/static/vong4_file/css/animate.css')
+        
+        style.
+            input[type=number]::-webkit-inner-spin-button, 
+            input[type=number]::-webkit-outer-spin-button { 
+            -webkit-appearance: none; 
+                margin: 0; 
+            }
+            .point:not(.empty):before {
+            content: " - Câu Hỏi ";
+            }
+            .point:not(.empty):after {
+            content: " điểm";
+            }
+            .dropdown-style {
+            position: absolute;
+            will-change: transform;
+            top: 0px;
+            left: 0px;
+            transform: translate3d(0px, 38px, 0px);
+            }
+            .hide {
+            opacity: 0.3;
+            }
+            body {
+            background-color: #32323f;
+            }
+            .card {
+            background-color: #efefff;
+            margin-top: 3%;
+            margin-bottom: 3%;
+            }
+            .user.active {
+            background-color: #efefff;
+            }
+            .user.raising-hand .card {
+            background-color: #bbcb3c;
+            }
+        
+    body
+        // Question Info
+        .my-1
+            .container
+                .row
+                    .col-md-12.text-center.text-light
+                        h1.pack-number.d-inline #{pack}
+                        h1.point.d-inline(class={
+                            empty: !to_add
+                        }) #{to_add}
+        
+        div
+            if user.is_admin
+                .star-top.h-75.position-absolute
+                    img.animated.toggle-star.h-25(src='/static/vong4_file/Keron_star.svg')
+            .p-2.d-flex.justify-content-center
+                h1.question.text-center.w-75.border-bottom.text-light #{question}
+               
+        
+        // User Info
+        .pt-5.d-flex.justify-content-center
+            .container-fluid.px-5
+                .users.row
+                    each u in users
+                        if !u.is_admin
+                            .user.col-md-3(id=u.id, class={
+                                me: u.id == user.id,
+                                active: u.id == active
+                            })
+                                .card
+                                    .card-body.text-center.mx-2
+                                        h2.name.text-uppercase
+                                            | #{u.name}
+                                            br
+                                        h6: br
+                                        h3.score #{u.score}
+        
+        // Timer
+        .mt-3
+            .container-fluid.px-5
+                #timer-30s.progress
+                    .progress-bar(role='progressbar')
+        
+        if user.is_admin
+            // Timer rebuttle
+            .py-3.px-5.text-center.d-flex.align-items-center
+                #timer-5s.progress.w-100
+                    .progress-bar(role='progressbar')
+
+            // User score change
+            .py-2.px-1
+                .container
+                    .row
+                        .col-md-3.d-flex.justify-content-end
+                            .btn-group.w-75
+                                button.btn.btn-outline-primary.dropdown-toggle.w-100.choose-user(data-toggle='dropdown', aria-expanded='false') 
+                                .dropdown-menu.w-100.dropdown-style(x-placement='bottom-start')
+                                    each u in users
+                                        if !u.is_admin
+                                            a.dropdown-item.user-adj-score(data-uid=u.id) #{u.name}
+                        .col-md-6
+                            form.adj-score-form.form-inline.w-100
+                                .input-group.w-100
+                                    input.adj-score.form-control.w-75(type='number')
+                                    .input-group-append.w-25
+                                        button.score-submit.btn.btn-primary.w-100(type='button') Change Score
+                                    
+                        .col-md-3
+                            button.raise-hand.btn.w-75 Đếm Giờ Giành Trả Lời
+
+            // Controllers
+            .p-2.mt-4
+                .container-fluid.row
+                    .col-md-1
+                    .col-md-3
+                        // Choose questions pack
+                        .pack-choose.btn-group.w-100
+                            .btn-group.w-75
+                                button.packs.btn.btn-outline-primary.dropdown-toggle.w-100(data-toggle='dropdown', data-pack=pack) Chọn Gói Câu Hỏi 
+                                .dropdown-menu.w-100
+                                    a.pack.dropdown-item(href='#', data-pack='0') Gói Câu Hỏi 40 Điểm
+                                    a.pack.dropdown-item(href='#', data-pack='1') Gói Câu Hỏi 60 Điểm
+                                    a.pack.dropdown-item(href='#', data-pack='2') Gói Câu Hỏi 80 Điểm
+                            a.set-pack.btn.btn-primary.w-25(href='#') Chọn
+                    .col-md-3.d-flex.align-items-center.justify-content-center: button.next.btn.w-75 Tiếp
+                    .col-md-3.d-flex.align-items-center.justify-content-center: button.btn.w-75(disabled=ended)  Kết Thúc
+                    .col-md-1: .set-star.five-star
+                    .col-md-1
+                    
+        else
+            .container-fluid.px-5.py-4
+                #timer-5s.progress.w-100
+                    .progress-bar(role='progressbar')
+                .py-4.d-flex.justify-content-center
+                    button.raise-hand.btn.btn-outline-primary(data-uid=user.id) Giành Quyền Trả Lời
+                
+        
+        script(src='/socket.io/socket.io.js')                
+        script(src='/static/vong4_file/js/jquery.js')
+        script(src='/static/js/timer.js')
+        
+        // Update user name after choose
+        script.
+            $('.user-adj-score').click(function() {
+            var show = $('.choose-user');
+            show.text($(this).text());
+            show.data('uid', $(this).data('uid'));
+            });
+            $('.user-adj-score').first().trigger('click');
+        
+        // Update queestion pack name after choose
+        script.
+            $('.pack').click(function() {
+            var show = $('.packs');
+            show.text($(this).text());
+            show.data('pack', $(this).data('pack'));
+            });
+        
+        // Hope star animation toggler
+        script.
+            $('.five-star').on('click', function() {
+            $('.toggle-star').removeClass('zoomOutDown');
+            $('.toggle-star').addClass('bounceInLeft appear');
+            // $('.toggle-star').addClass('bounceInLeft toggle-star-display');
+            });
+            $('.toggle-star').on('click', function() {
+            // if ($(this).hasClass("bounceInLeft")) {
+            $(this).removeClass('bounceInLeft');
+            $(this).addClass('zoomOutDown');
+            // }
+            });
+            
+        script.
+            var texts = {
+            '-1': '',
+            '0': 'Gói 40 Điểm',
+            '1': 'Gói 60 Điểm',
+            '2': 'Gói 80 Điểm'
+            };
+            function setText () {
+            var packElem = $('.pack-number');
+            packElem.html(texts[packElem.text()] || '<br>');
+            }
+            setText();
+        
+        script(src='/static/vong4_file/js/popper.js')
+        script(src='/static/vong4_file/js/bootstrap.js')
+
+        script(src='/static/vong4/vong4-ui.js')
+        if user.is_admin
+            script(src='/static/vong4/vong4-ad.js')
+        else
+            script(src='/static/vong4/vong4-user.js')

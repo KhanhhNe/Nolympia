@@ -1,0 +1,42 @@
+.answer {
+    display: flex;
+    -webkit-user-select: none;
+    user-select: none;
+}
+
+/*
+.users
+    .user
+    .user.me
+    .user.banned
+        .name
+        .score
+
+.key-image
+    .image
+    .image.open
+    .main-image
+
+.puzzle
+    .answer
+    .answer.done
+        .word
+
+.select
+
+.user-sub
+.user-sub.banned
+    .uname
+    .submission
+
+.show-subs
+.show-ans
+.show-img
+.next-q
+.key-commit
+
+.sub
+#answer
+.submit
+.ans-key
+*/

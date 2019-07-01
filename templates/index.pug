@@ -1,0 +1,66 @@
+- var jsfile = user.is_admin?'admin/index.js':'index.js'
+
+doctype html
+html
+  head
+    link(href="/static/img/favicon.ico" rel="shortcut icon" type="image/x-icon")
+    meta(charset='utf-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1')
+    title  SẴN SÀNG
+    link(rel='stylesheet', type='text/css', href='/static/index_File/button.css')
+    link(rel='stylesheet', type='text/css', href='/static/index_File/font-awesome.min.css')
+    link(rel='stylesheet', type='text/css', href='/static/index_File/theme.css')
+    link(rel='stylesheet', type='text/css', href='/static/index_File/button.css')
+    
+    style.
+        #ready::before { content: "Đã sẵn sàng: " }
+        #ready::after { content: "/4." }
+        
+    if user.is_admin
+        style.
+            #start-btn[disabled] { opacity: 0.5; }
+    else
+        style.
+            #ready-btn:not(.ready)::before { content: "SẴN SÀNG!" }
+            #ready-btn.ready::before { content: "HỦY" }
+    
+  body
+    .py-5.text-center.align-items-center.d-flex(style='background-image: linear-gradient(to left bottom, rgba(189, 195, 199, 0.75), rgba(44, 62, 80, 0.75)); background-size: 100%;')
+      .container.py-5
+        .row
+          .col-md-8.mx-auto
+            if user.is_admin
+                h1.display-3.mb-4 BẮT ĐẦU
+                p.lea.mb-5 ĐỢI NGƯỜI CHƠI SẴN SÀNG
+            else
+                h1.display-3.mb-4 SẴN SÀNG
+                p.lead.mb-5 NHẤN NÚT DƯỚI ĐỂ SẴN SÀNG
+            main.container
+              blockquote
+                q Chào #{user.name}!
+                div#ready #{ready}
+        
+        if user.is_admin
+            button.btn#start-btn(disabled=!all_ready) BẮT ĐẦU
+        else
+            button.btn#ready-btn(class={ ready: user_ready })
+        
+    .text-white.py-0(style='background-image: linear-gradient(to bottom, rgba(0, 0, 0, .75), rgba(0, 0, 0, .75));  background-position: center center, center center;  background-size: cover, cover;  background-repeat: repeat, repeat;')
+      .container
+        .row
+          .col-md-12.text-center.align-self-center.p-4
+            p.mb-5
+              | Trần Đình Quang Ninh
+              br
+              | Lương Quang Khánh 
+              br
+              | OLYMPIA  
+              br
+              | THPT chuyên Quốc Học Huế
+              
+    script(src='/static/index_File/jquery-3.2.1.slim.min.js')
+    script(src='/static/index_File/popper.min.js')
+    script(src='/static/index_File/bootstrap.min.js')
+        
+    script(src='/socket.io/socket.io.js')
+    script(src='/static/js/'+jsfile, type='text/javascript')

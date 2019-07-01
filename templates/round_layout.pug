@@ -1,0 +1,33 @@
+- var contest_display = stt != '' && stt != 'end'?{}:{style: 'display: none'}
+- var wait_display = stt == ''?{}:{style: 'display: none'}
+- var end_display = stt == 'end'?{}:{style: 'display: none'}
+
+doctype html
+html
+    head
+        block head
+        
+    body
+        div#ready&attributes(wait_display)
+            block ready
+            
+            if user.is_admin
+                button#start-btn Start
+           
+           
+        div#contest&attributes(contest_display)
+            block contest
+            
+            
+        div#end&attributes(end_display)
+            block end
+            if user.is_admin
+                button#next-round Next round
+        
+        
+        script(src="/socket.io/socket.io.js")
+        script(src="/static/js/jquery-3.1.1.min.js")
+        block scripts
+        script(src="/static/js/base-ui.js")
+        if user.is_admin
+            script(src="/static/js/admin/ad-base-ui.js")

@@ -1,0 +1,147 @@
+- var userDisabled = banned.indexOf(user.id) >= 0
+
+html
+    head
+        meta(charset='utf-8')
+        meta(name='viewport', content='width=device-width, initial-scale=1')
+        title Vượt Chướng Ngại Vật
+        link(href="/static/img/favicon.ico" rel="shortcut icon" type="image/x-icon")
+        link(rel='stylesheet', href='/static/vong2_file/font-awesome.min.css')
+        link(rel='stylesheet', href='/static/vong2_file/bootstrap.min.css')
+        link(rel='stylesheet', href='/static/vong2_file/theme.css')
+        link(rel='stylesheet', href='/static/vong2_file/style.css')
+        link(rel='stylesheet', href='/static/vong2_file/vong2.css')
+        link(rel='stylesheet', href='/static/vong2_file/form.css')
+        
+        if user.is_admin
+            link(rel='stylesheet', href='/static/vong2_file/image-background.css')
+        
+        style. 
+            .hide-vis {
+            visibility: hidden;
+            }
+            label.disabled {
+            opacity: 0.2;
+            }
+            .margin-5p {
+            margin-top: 5% !important;
+            margin-bottom: 5% !important;
+            }
+            .hide {
+            display: none !important;
+            }
+            .submission:before, .submission:after {
+            content: "\"";
+            }
+            .show-clue.all {
+            background-color: #178e32ad;
+            }
+        
+    body
+        if user.is_admin
+            .ready-div.container.text-center.h-100
+                div(style="height: 40%")
+                h2.mb-4.text-light Vòng 2 - Vượt Chướng Ngại Vật
+                .row
+                    .col-md-4
+                    .col-md-4: button.start-btn.btn.btn-info.rounded-0.w-100 Bắt Đầu
+                    .col-md-4
+    
+    
+        .contest-div.container-fluid(class={
+            hide: user.is_admin
+        })
+            .container-fluid.vong2.mt-1(style='color: #ccc')
+                .d-flex.justify-content-center.text-center.w-100
+                    h1#question.border-bottom.w-75: br
+                if user.is_admin
+                    .row
+                        .col-md-5.w-75
+                            .mt-4(height='fit-content')
+                                each i in [0,1,2,3,4]
+                                    img.clue-image(to=i, class={ open: done.indexOf(i)>=0 }, class='i-'+(i+1))
+
+                        .col-md-7.pt-2
+                            each ans, i in answers
+                                .quest
+                                    .row
+                                        .answer-text.col-md-9.grid-7(to=i, class={ done: done.indexOf(i)>=0 })
+                                            each w in ans
+                                                if w != ' '
+                                                    .box-shadow.answer.text-center #{w}
+                                        .select.btn.col-md-3.text-center.box-shadow.answer(id=i, class={ disabled: done.indexOf(i)>=0 }) Câu hỏi #{i+1}
+                        
+                            #submissions.hide-vis.d-flex.flex-column.align-items-center.margin-5p
+                                each sub, index in submissions
+                                    - var ind = index + 1
+                                    if !users[ind].is_admin
+                                        - var uid = users[ind].id
+                                        .user-sub.alert.alert-light.text-dark.rounded-0.w-75.row.mb-1(
+                                            of=uid,
+                                            role='alert',
+                                            class={ banned: banned.indexOf(uid) >= 0 }
+                                        )
+                                            .uname.col-md-3 #{users[ind].name}
+                                            .col-md-9.text-right
+                                                span.submission #{sub}
+
+
+                    .grid-6.text-center
+                        button.show-subs.btn.btn-outline-light.rounded-0 Câu Trả Lời
+                        button.show-clue.btn.btn-outline-light.rounded-0 Hiển Thị Đáp Án
+                        button.next-q.btn.btn-outline-light.rounded-0 Câu Hỏi Tiếp Theo
+                        button.key-commit.btn.btn-outline-light.rounded-0(res='true', disabled) Đúng Từ Khóa
+                        button.key-commit.btn.btn-outline-light.rounded-0(res='false', disabled) Sai Từ Khóa
+                        button.end-btn.btn.btn-outline-light.rounded-0(disabled) Kết Thúc
+
+            #timer.progress.mt-2
+                .progress-bar(role='progressbar')
+
+            .users.row.mx-5.my-4
+                each u in users
+                    if !u.is_admin
+                        .user.col-md-3(id=u.id, class={
+                            me: u.id == user.id,
+                            banned: banned.indexOf(u.id)>=0
+                        })
+                            .card.bg-dark.text-center.text-light
+                                .card-body
+                                    h3.name #{u.name}
+                                    b.score.h2 #{u.score}
+
+            if !user.is_admin
+                form.mx-5(onsubmit='return false;')
+                    legend#submission.pt-1.d-flex.flex-row
+                        p.sub #{sub ? sub : ''}
+                    .control
+                        input#answer(type='text', autocomplete='off', placeholder='NỘI DUNG CÂU TRẢ LỜI', disabled=userDisabled)
+                        label(style='color: aqua;', class={ disabled: userDisabled }) Câu Trả Lời
+                    .text-right
+                        button.submit.btn.rounded-0.w-25.my-1(type='submit', disabled=userDisabled) Trả lời
+                        button.ans-key.btn.rounded-0.w-25.my-1(style='color: #fff900;', type='submit', disabled=userDisabled) Trả lời từ khóa
+                        
+        
+        if user.is_admin
+            .end-div.hide.container.text-center.h-100
+                div(style="height: 40%")
+                h2.mb-4.text-light Vòng 2 Đã Kết Thúc
+                .row
+                    .col-md-4
+                    .col-md-4: button.next-btn.btn.btn-info.rounded-0.w-100 Tiếp Theo
+                    .col-md-4
+        
+        
+        script(src="/socket.io/socket.io.js")
+        script(src="/static/js/jquery-3.1.1.min.js")
+        
+        script(src='/static/js/vong2.js')
+        if user.is_admin
+            script(src='/static/js/admin/vong2.js')
+        script(src='/static/js/timer.js')
+        script(src='/static/js/sound.js')
+        script.
+            preloadSound([15]);
+        
+        script(src="/static/js/base-ui.js")
+        if user.is_admin
+            script(src="/static/js/admin/ad-base-ui.js")

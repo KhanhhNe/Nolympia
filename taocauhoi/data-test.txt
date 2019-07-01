@@ -1,0 +1,116 @@
+﻿
+admin_password
+User 1
+User1_password
+User 2
+User2_password
+User 3
+User3_password
+User 4
+User4_password
+CÂU 1: "Banh nỉ" là từ dùng để chỉ bộ môn thể thao nào?
+CÂU 2: [...] là quân hàm cao nhất trong Quân đội nhân dân nước ta hiện nay.
+CÂU 3: Bàn là và bếp điện hoạt động dựa trên tác dụng nào của dòng điện?
+CÂU 4: Napoleon was a King of which European country?
+CÂU 5: Giải Grammy là giải thưởng của quốc gia nào?
+CÂU 6: Phần lớn các chất tồn tại ở trạng thái nào khi ở nhiệt độ thấp: rắn, lỏng hay khí?
+CÂU 7: "Rặng liễu đìu hiu đứng chịu tang/ Tóc buồn buông xuống lệ ngàn hàng" diễn tả cảm xúc của thi sĩ Xuân Diệu về mùa nào?
+CÂU 8: Thục Phán, sau khi đánh bại Hùng Vương thứ 18 đã lập nên nhà nước Âu Lạc và tự xưng là ...
+CÂU 9: Độ Richter là đơn vị để đo cường độ của hiện tượng nào trên Trái Đất?
+CÂU 10: Giới ... gồm những sinh vật nhân sơ, đơn bào, có kích thước rất nhỏ, sinh sản nhanh và có phương thức sinh sống rất đa dạng.
+CÂU 11: Muỗi vằn hay muỗi anophen là trung gian lây truyền bệnh sốt xuất huyết cho con người?
+CÂU 12: Hai góc bù nhau có chung một cạnh được gọi là hai góc ...
+CÂU 1: "Banh nỉ" là từ dùng để chỉ bộ môn thể thao nào?
+CÂU 2: [...] là quân hàm cao nhất trong Quân đội nhân dân nước ta hiện nay.
+CÂU 3: Bàn là và bếp điện hoạt động dựa trên tác dụng nào của dòng điện?
+CÂU 4: Napoleon was a King of which European country?
+CÂU 5: Giải Grammy là giải thưởng của quốc gia nào?
+CÂU 6: Phần lớn các chất tồn tại ở trạng thái nào khi ở nhiệt độ thấp: rắn, lỏng hay khí?
+CÂU 7: "Rặng liễu đìu hiu đứng chịu tang/ Tóc buồn buông xuống lệ ngàn hàng" diễn tả cảm xúc của thi sĩ Xuân Diệu về mùa nào?
+CÂU 8: Thục Phán, sau khi đánh bại Hùng Vương thứ 18 đã lập nên nhà nước Âu Lạc và tự xưng là ...
+CÂU 9: Độ Richter là đơn vị để đo cường độ của hiện tượng nào trên Trái Đất?
+CÂU 10: Giới ... gồm những sinh vật nhân sơ, đơn bào, có kích thước rất nhỏ, sinh sản nhanh và có phương thức sinh sống rất đa dạng.
+CÂU 11: Muỗi vằn hay muỗi anophen là trung gian lây truyền bệnh sốt xuất huyết cho con người?
+CÂU 12: Hai góc bù nhau có chung một cạnh được gọi là hai góc ...
+CÂU 1: "Banh nỉ" là từ dùng để chỉ bộ môn thể thao nào?
+CÂU 2: [...] là quân hàm cao nhất trong Quân đội nhân dân nước ta hiện nay.
+CÂU 3: Bàn là và bếp điện hoạt động dựa trên tác dụng nào của dòng điện?
+CÂU 4: Napoleon was a King of which European country?
+CÂU 5: Giải Grammy là giải thưởng của quốc gia nào?
+CÂU 6: Phần lớn các chất tồn tại ở trạng thái nào khi ở nhiệt độ thấp: rắn, lỏng hay khí?
+CÂU 7: "Rặng liễu đìu hiu đứng chịu tang/ Tóc buồn buông xuống lệ ngàn hàng" diễn tả cảm xúc của thi sĩ Xuân Diệu về mùa nào?
+CÂU 8: Thục Phán, sau khi đánh bại Hùng Vương thứ 18 đã lập nên nhà nước Âu Lạc và tự xưng là ...
+CÂU 9: Độ Richter là đơn vị để đo cường độ của hiện tượng nào trên Trái Đất?
+CÂU 10: Giới ... gồm những sinh vật nhân sơ, đơn bào, có kích thước rất nhỏ, sinh sản nhanh và có phương thức sinh sống rất đa dạng.
+CÂU 11: Muỗi vằn hay muỗi anophen là trung gian lây truyền bệnh sốt xuất huyết cho con người?
+CÂU 12: Hai góc bù nhau có chung một cạnh được gọi là hai góc ...
+CÂU 1: "Banh nỉ" là từ dùng để chỉ bộ môn thể thao nào?
+CÂU 2: [...] là quân hàm cao nhất trong Quân đội nhân dân nước ta hiện nay.
+CÂU 3: Bàn là và bếp điện hoạt động dựa trên tác dụng nào của dòng điện?
+CÂU 4: Napoleon was a King of which European country?
+CÂU 5: Giải Grammy là giải thưởng của quốc gia nào?
+CÂU 6: Phần lớn các chất tồn tại ở trạng thái nào khi ở nhiệt độ thấp: rắn, lỏng hay khí?
+CÂU 7: "Rặng liễu đìu hiu đứng chịu tang/ Tóc buồn buông xuống lệ ngàn hàng" diễn tả cảm xúc của thi sĩ Xuân Diệu về mùa nào?
+CÂU 8: Thục Phán, sau khi đánh bại Hùng Vương thứ 18 đã lập nên nhà nước Âu Lạc và tự xưng là ...
+CÂU 9: Độ Richter là đơn vị để đo cường độ của hiện tượng nào trên Trái Đất?
+CÂU 10: Giới ... gồm những sinh vật nhân sơ, đơn bào, có kích thước rất nhỏ, sinh sản nhanh và có phương thức sinh sống rất đa dạng.
+CÂU 11: Muỗi vằn hay muỗi anophen là trung gian lây truyền bệnh sốt xuất huyết cho con người?
+CÂU 12: Hai góc bù nhau có chung một cạnh được gọi là hai góc ...
+CÂU 1: Nhà văn Andersen từng viết về một cô bé nghèo khổ, phải bán hàng trong giá rét kinh khủng của đêm cuối năm và đã lặng lẽ chết đi trong tuyết lạnh. Cô bé đó bán mặt hàng gì?
+DIÊM
+CÂU 2: Nguyên tố hóa học nào có số hiệu nguyên tử bằng 8 trong bảng tuần hoàn các nguyên tố hóa học và nguyên tử khối bằng 16?
+OXI
+CÂU 3: Các bức xạ điện từ có bước sóng nằm trong vùng quang phổ nhìn thấy được bằng mắt thường của con người là gì?
+ÁNH SÁNG
+CÂU 4: Phản ứng hóa học giải phóng năng lượng dưới dạng nhiệt được gọi là phản ứng gì?
+TỎA NHIỆT
+CÂU 5: Câu thơ sau là của bài thơ nào: "Lên bốn tuổi cháu đã quen mùi khói..."
+BẾP LỬA
+CÂU 1: Tìm hình cần điền vào ô
+D|CÂU D
+/static/video/1.mp4
+CÂU 2: Tìm hình cần điền vào ô
+A|CÂU A
+/static/video/2.mp4
+CÂU 3: Theo quy luật thì là hình nào?
+A|CÂU A
+/static/video/3.mp4
+CÂU 4: Đoạn thẳng hướng nào thích hợp nhất?
+B|CÂU B
+/static/video/4.mp4
+CÂU 1: Đồi thuộc dạng địa hình núi già hay trẻ
+CÂU 2: What do you call a piece of cloth used as a symbol  of a country or as a signal?
+CÂU 3: World Cup 2018 được tổ chức ở nước nào?
+CÂU 1: Đồi thuộc dạng địa hình núi già hay trẻ
+CÂU 2: What do you call a piece of cloth used as a symbol  of a country or as a signal?
+CÂU 3: World Cup 2018 được tổ chức ở nước nào?
+CÂU 1: Đồi thuộc dạng địa hình núi già hay trẻ
+CÂU 2: What do you call a piece of cloth used as a symbol  of a country or as a signal?
+CÂU 3: World Cup 2018 được tổ chức ở nước nào?
+CÂU 1: Đồi thuộc dạng địa hình núi già hay trẻ
+CÂU 2: What do you call a piece of cloth used as a symbol  of a country or as a signal?
+CÂU 3: World Cup 2018 được tổ chức ở nước nào?
+CÂU 1: Đồi thuộc dạng địa hình núi già hay trẻ
+CÂU 2: What do you call a piece of cloth used as a symbol  of a country or as a signal?
+CÂU 3: World Cup 2018 được tổ chức ở nước nào?
+CÂU 1: Đồi thuộc dạng địa hình núi già hay trẻ
+CÂU 2: What do you call a piece of cloth used as a symbol  of a country or as a signal?
+CÂU 3: World Cup 2018 được tổ chức ở nước nào?
+CÂU 1: Đồi thuộc dạng địa hình núi già hay trẻ
+CÂU 2: What do you call a piece of cloth used as a symbol  of a country or as a signal?
+CÂU 3: World Cup 2018 được tổ chức ở nước nào?
+CÂU 1: Đồi thuộc dạng địa hình núi già hay trẻ
+CÂU 2: What do you call a piece of cloth used as a symbol  of a country or as a signal?
+CÂU 3: World Cup 2018 được tổ chức ở nước nào?
+CÂU 1: Đồi thuộc dạng địa hình núi già hay trẻ
+CÂU 2: What do you call a piece of cloth used as a symbol  of a country or as a signal?
+CÂU 3: World Cup 2018 được tổ chức ở nước nào?
+CÂU 1: Đồi thuộc dạng địa hình núi già hay trẻ
+CÂU 2: What do you call a piece of cloth used as a symbol  of a country or as a signal?
+CÂU 3: World Cup 2018 được tổ chức ở nước nào?
+CÂU 1: Đồi thuộc dạng địa hình núi già hay trẻ
+CÂU 2: What do you call a piece of cloth used as a symbol  of a country or as a signal?
+CÂU 3: World Cup 2018 được tổ chức ở nước nào?
+CÂU 1: Đồi thuộc dạng địa hình núi già hay trẻ
+CÂU 2: What do you call a piece of cloth used as a symbol  of a country or as a signal?
+CÂU 3: World Cup 2018 được tổ chức ở nước nào?

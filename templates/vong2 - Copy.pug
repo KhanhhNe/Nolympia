@@ -1,0 +1,84 @@
+extends round_layout.pug
+
+block head
+    title Round 2
+    link(rel='stylesheet' href='/static/css/vong2.css' type='text/css')
+    meta(charset='utf-8')
+
+block ready
+    span#welcome Welcome to round 2
+
+block contest
+    div.users
+        each u in users
+            if u.is_admin
+                - continue
+            div.user(
+                id=u.id,
+                class={
+                    me: u.id == user.id,
+                    banned: banned.indexOf(id) >= 0
+                }
+            )
+                div.name #{u.name}
+                div.score #{u.score}
+                
+    progress#timer(min=0 max=3000 value=time?time*100:0)
+    
+    span#question
+                        
+    if user.is_admin
+        div.key-image
+            each i in [0,1,2,3,4]
+                div.image(
+                    to='#'+i,
+                    class={ open: done.indexOf(i) >= 0 }
+                )
+            img.main-image(src=main_src)
+            
+        div.puzzle
+            each ans, i in answers
+                div.answer(
+                    to='#'+i,
+                    class={ done: done.indexOf(i) >= 0 }
+                )
+                    each w in ans
+                        div.word #{w}
+                    
+        each i in [0,1,2,3,4]
+            button.select(id=i, disabled=done.indexOf(i) >= 0) Question #{i+1}
+        
+        div#submissions(style='visibility: hidden')
+            each sub, ind in submissions
+                - var uid = users[ind+1].id;
+                div.user-sub(
+                    of=uid,
+                    class={ banned: banned.indexOf(uid) >= 0 }
+                )
+                    div.uname #{users[ind+1].name}
+                    div.submission
+            
+        button.show-subs Submissions
+        button.show-ans Answer
+        button.show-img Open Image
+        button.next-q Next Question
+        button.key-commit(res='true', disabled) Key True
+        button.key-commit(res='false', disabled) Key False
+        button.end ENDDDDD
+    
+    else
+        span.sub #{sub ? sub : ''}
+        input#answer
+        button.submit Commit Answer
+        button.ans-key Answer Key
+        
+
+block end
+    span Ended
+
+block scripts
+
+    script(src='/static/js/vong2.js')
+    if user.is_admin
+        script(src='/static/js/admin/vong2.js')
+    script(src='/static/js/timer.js')

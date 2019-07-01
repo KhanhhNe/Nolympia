@@ -1,0 +1,24 @@
+.clue-image {
+    position: absolute;
+    width: 100%;
+}
+
+.clue-image:not(.open) {
+    visibility: hidden;
+}
+
+.clue-image.i-1 {
+    content: url("1.png");
+}
+.clue-image.i-2 {
+    content: url("2.png");
+}
+.clue-image.i-3 {
+    content: url("3.png");
+}
+.clue-image.i-4 {
+    content: url("4.png");
+}
+.clue-image.i-5 {
+    content: url("5.png");
+}

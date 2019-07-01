@@ -1,0 +1,60 @@
+extends round_layout.pug
+
+block head
+    title Round 3
+    link(rel='stylesheet' href='/static/css/vong3.css' type='text/css')
+
+block ready
+    span#welcome Welcome to round 3
+
+block contest
+    span#question
+    video#vid(width=360 height=240)
+        source(type='video/mp4')
+        
+    div.users
+        each u in users
+            if u.is_admin
+                - continue
+            div.user(
+                id=u.id,
+                class={ me: u.id == user.id }
+            )
+                div.name #{u.name}
+                div.score #{u.score}
+            
+    progress#timer(min=0 max=3000 value=time?time:0)
+    
+    if user.is_admin
+        div.hide#submissions
+            - var ind = 1
+            each sub, id in subs
+                div(to=id).submission
+                    div.name= users[ind].name
+                    div.sub
+                        span.answer= sub[0]
+                        
+                        span | |
+                        
+                        span.time(default-value='-:-')= sub[1] >= 0 ? sub[1]/1000 : '-:-'
+                    
+                - ind++
+    
+        button#next-question Next Question
+        button#show-subs Show Submissions
+    else
+        div#submission
+            span.answer= sub[0]
+            span.time(default-value='-:-')= sub[1] >= 0 ? sub[1]/1000 : '-:-'
+
+        input#answer
+        button#commit Answer
+        
+block end
+    span#ended-txt Ended
+
+block scripts
+    script(src='/static/js/vong3.js')
+    if user.is_admin
+        script(src='/static/js/admin/vong3.js')
+    script(src='/static/js/timer.js')  
