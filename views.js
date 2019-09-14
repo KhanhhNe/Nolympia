@@ -39,7 +39,7 @@ function authenticate (req, res) {
     
     if (req.body) {
         if (req.body.password) {
-            var user_obj = dtman.getUser(req.body.password);
+            var user_obj = dtman.authenticate(req.body.password);
             
             if (user_obj) {
                 req.session.user = user_obj;
